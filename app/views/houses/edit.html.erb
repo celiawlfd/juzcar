@@ -4,5 +4,6 @@
   <%= f.input :price_per_night %>
   <%= f.input :number_of_people %>
   <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>

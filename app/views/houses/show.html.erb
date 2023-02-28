@@ -1,5 +1,4 @@
 <%= link_to "Back to list", houses_path %>
-<p>empty show</p>
 <h1><%= @house.name %></h1>
 
 <h3>Description</h3>
@@ -15,7 +14,7 @@
   <%= f.input :departure_date, as: :date, html5: true %>
   <%= f.submit 'Book now !'%>
  <% end %>
- 
+
 <% if current_user == @house.user %>
   <%= link_to "Delete",
     house_path(@house),
