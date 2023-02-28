@@ -5,8 +5,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.house = @house
-    @reservation.save
-    redirect_to house_path(@house)
+    if @reservation.save
+      redirect_to house_path(@house)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
