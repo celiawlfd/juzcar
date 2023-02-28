@@ -1,6 +1,8 @@
 <h1>Juzcar</h1>
 <h3>Welcome to the first web application to find your</h3>
 
+<%= link_to "Add your smurf's house", new_house_path %>
+
 <div>
   <% @houses.each do |house| %>
     <%= link_to house_path(house.id) do %>
