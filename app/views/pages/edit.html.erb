@@ -1,0 +1,8 @@
+<%= simple_form_for [@house] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_people %>
+  <%= f.input :description %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
