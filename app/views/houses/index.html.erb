@@ -1,18 +1,22 @@
 <h1>Juzcar</h1>
 <h3>Welcome to the first web application to find your</h3>
 
-<div>
-  <% @houses.each do |house| %>
-    <%= link_to house_path(house.id) do %>
-      <div class="card">
-        <% house.photos.each do |photo| %>
-	        <%= cl_image_tag photo.key, height: 300, width: 300, crop: :scale %>
-        <% end %>
-        <h5><%= house.name %></h5>
-        <p><%= house.address %></p>
-        <p><%= house.price_per_night %>€/night</p>
-        <p><%= house.number_of_people %><i class="fa-solid fa-users"></i></p>
-      </div>
+<div class="container">
+  <div class="d-flex flex-wrap d-block">
+    <% @houses.each do |house| %>
+      <div class="card m-2 border-0">
+        <%= link_to house_path(house.id) do %>
+          <div class="card">
+            <% house.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 300, crop: :scale, class:"p-3" %>
+            <% end %>
+            <h5 class="px-3"><%= house.name %></h5>
+            <p class="px-3"><%= house.address %></p>
+            <p class="px-3"><%= house.price_per_night %>€/night</p>
+            <p class="px-3"><%= house.number_of_people %> <i class="fa-solid fa-users"></i></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
