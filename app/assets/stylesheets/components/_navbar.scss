@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border-bottom: 1px solid black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,16 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-title {
+  font-family: 'Bangers', cursive;
+  font-size: larger;
+}
+
+.navbar-brand {
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
