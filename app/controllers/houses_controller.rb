@@ -8,7 +8,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-  
+  end
 
   def edit
     @house = House.find(params[:id])
@@ -25,6 +25,12 @@ class HousesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @house = House.find(params[:id])
+    @house.destroy
+    redirect_to  houses_path, status: :see_other
   end
 
   def update
