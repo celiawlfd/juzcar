@@ -9,3 +9,10 @@
 <p>Price :<%= @house.price_per_night %></p>
 <p>Rating :</p>
 <p>People :<%= @house.number_of_people %></p>
+
+<% if current_user == @house.user %>
+  <%= link_to "Delete",
+    house_path(@house),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+<% end %>
