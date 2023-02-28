@@ -1,0 +1,19 @@
+
+<div class="container">
+  <h1>Add your new smurf's house</h1>
+  <hr>
+  <div class="form">
+    <%= simple_form_for @house do |f| %>
+    <div class="first-3">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :price_per_night %>
+    </div>
+    <div class="last-3">
+      <%= f.input :number_of_people %>
+      <%= f.input :description %>
+      <%= f.submit "Smurf!" %>
+    </div>
+    <% end %>
+  </div>
+</div>
