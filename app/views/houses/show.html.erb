@@ -1,4 +1,5 @@
 
+
   <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
     <%= link_to "Back to list", houses_path, class: "btn btn-secondary rounded-5" %>
   </div>
@@ -20,33 +21,30 @@
           <p>Rating :</p>
           <p>People :<%= @house.number_of_people %></p>
           <form class="card border-0">
-            <div class="row">
-              <%= simple_form_for [@house, @reservation] do |f| %>
-                <div class="col-6">
-                  <%= f.input :arrival_date, as: :date, html5: true %>
-                </div>
-                <div class="col-6">
-                  <%= f.input :departure_date, as: :date, html5: true %>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                  <%= f.submit 'Book now !', class: "btn btn-outline-dark" %>
-                </div>
-              <% end %>
-            </div>
+            <% unless current_user == @house.user %>
+              <div class="row">
+                <%= simple_form_for [@house, @reservation] do |f| %>
+                  <div class="col-6">
+                    <%= f.input :arrival_date, as: :date, html5: true %>
+                  </div>
+                  <div class="col-6">
+                    <%= f.input :departure_date, as: :date, html5: true %>
+                  </div>
+                  <div class="col-12 d-flex justify-content-center">
+                    <%= f.submit 'Book now !', class: "btn btn-outline-dark" %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           </form>
         </div>
       </div>
 
-
-      <% if current_user == @house.user %>
-        <%= link_to "Edit this house", edit_house_path(@house) %> |
-      <% end %>
-
-      <% if current_user == @house.user %>
-        <%= link_to "Delete",
+       <% if current_user == @house.user %>
+          <%= link_to "Edit this house", edit_house_path(@house) %> |
+          <%= link_to "Delete",
           house_path(@house),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-      <% end %>
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+       <% end %>
     </div>
   </div>

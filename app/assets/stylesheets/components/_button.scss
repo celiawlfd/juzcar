@@ -1,0 +1,8 @@
+.btn-outline-dark {
+  border-radius: 0px !important;
+  transition: 0.9s ease;
+  &:hover {
+    border-radius: 50px !important;
+    background-color: $smurf;
+  }
+}
