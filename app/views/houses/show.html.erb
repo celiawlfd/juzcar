@@ -15,7 +15,11 @@
   <%= f.input :departure_date, as: :date, html5: true %>
   <%= f.submit 'Book now !'%>
  <% end %>
- 
+
+ <% if current_user == @house.user %>
+  <%= link_to "Edit this house", edit_house_path(@house) %> |
+<% end %>
+
 <% if current_user == @house.user %>
   <%= link_to "Delete",
     house_path(@house),
