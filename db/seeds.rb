@@ -7,13 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'faker'
+require "open-uri"
+
 
 puts "cleaning database"
 House.destroy_all
 
+
 puts 'Creating 20 fake houses...'
 20.times do
-  house = House.create(
+  file = URI.open("https://static.wikia.nocookie.net/smurfs/images/f/ff/Smurf_House.png/revision/latest?cb=20110912224438")
+  house = House.new(
     name: Faker::TvShows::Friends.location,
     address: Faker::Address.street_address,
     price_per_night: rand(1000..5000),
@@ -21,5 +25,8 @@ puts 'Creating 20 fake houses...'
     description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
     user_id: 1
   )
+  house.photos.attach(io: file, filename: "house.png", content_type: "image/png")
+  puts house.photos.attached?
+  house.save
   puts "Creating id for : #{house[:id]}"
 end

@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to house_path(@house)
     else
-      render :new, status: :unprocessable_entity
+      render "houses/show", status: :unprocessable_entity
     end
   end
 

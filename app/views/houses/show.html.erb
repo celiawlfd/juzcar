@@ -1,5 +1,4 @@
 <%= link_to "Back to list", houses_path %>
-<p>empty show</p>
 <h1><%= @house.name %></h1>
 
 <h3>Description</h3>
@@ -11,6 +10,7 @@
 <p>People :<%= @house.number_of_people %></p>
 
 
+<h3>Enter here your dates to book </h3>
 
 <%= simple_form_for [@house, @reservation] do |f| %>
   <%= f.input :arrival_date, as: :date, html5: true %>
@@ -19,8 +19,8 @@
  <% end %>
 
 <% if current_user == @house.user %>
+<%= link_to "Edit this house", edit_house_path(@house) %> |
   <%= link_to "Delete",
     house_path(@house),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
