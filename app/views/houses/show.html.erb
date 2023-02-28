@@ -1,5 +1,4 @@
 <%= link_to "Back to list", houses_path %>
-<p>empty show</p>
 <h1><%= @house.name %></h1>
 
 <h3>Description</h3>
@@ -18,9 +17,12 @@
  <% end %>
 
 <% if current_user == @house.user %>
+  <%= link_to "Edit this house", edit_house_path(@house) %> |
+<% end %>
+
+<% if current_user == @house.user %>
 <%= link_to "Edit this house", edit_house_path(@house) %>
   <%= link_to "Delete",
     house_path(@house),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>

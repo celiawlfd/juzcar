@@ -12,8 +12,9 @@
     <div class="last-3">
       <%= f.input :number_of_people %>
       <%= f.input :description %>
-      <%= f.submit "Smurf!" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
     </div>
+    <%= f.submit "Smurf!" %>
     <% end %>
   </div>
 </div>
