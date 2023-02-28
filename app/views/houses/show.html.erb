@@ -9,6 +9,7 @@
 <p>Rating :</p>
 <p>People :<%= @house.number_of_people %></p>
 
+<h3>Enter here your dates to book </h3>
 <%= simple_form_for [@house, @reservation] do |f| %>
   <%= f.input :arrival_date, as: :date, html5: true %>
   <%= f.input :departure_date, as: :date, html5: true %>
@@ -20,6 +21,7 @@
 <% end %>
 
 <% if current_user == @house.user %>
+<%= link_to "Edit this house", edit_house_path(@house) %>
   <%= link_to "Delete",
     house_path(@house),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
