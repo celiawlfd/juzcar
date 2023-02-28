@@ -1,0 +1,15 @@
+<h1>Juzcar</h1>
+<h3>Welcome to the first web application to find your</h3>
+
+<div>
+  <% @houses.each do |house| %>
+    <%= link_to house_path(house.id) do %>
+      <div class="card">
+        <h5><%= house.name %></h5>
+        <p><%= house.address %></p>
+        <p><%= house.price_per_night %>€/night</p>
+        <p><%= house.number_of_people %><i class="fa-solid fa-users"></i></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
