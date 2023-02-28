@@ -10,7 +10,7 @@ class HousesController < ApplicationController
       redirect_to house_path(@house)
     else
       render :new, status: :unprocessable_entity
-
+    end
   end
 
   private
