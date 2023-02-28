@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :house
+  belongs_to :house, dependent: :destroy
   belongs_to :user
 
   validates :arrival_date, presence: true
