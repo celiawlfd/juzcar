@@ -10,9 +10,14 @@
 <p>Rating :</p>
 <p>People :<%= @house.number_of_people %></p>
 
+<% if policy(@house).edit? %>
+  <%= link_to "Edit this house", edit_house_path(@house) %> |
+<% end %>
+
 <% if current_user == @house.user %>
   <%= link_to "Delete",
     house_path(@house),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
 <% end %>
+

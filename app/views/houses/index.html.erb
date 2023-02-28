@@ -12,4 +12,5 @@
       </div>
     <% end %>
   <% end %>
+  <%= link_to "New house", new_house_path if policy(House).new? %>
 </div>
