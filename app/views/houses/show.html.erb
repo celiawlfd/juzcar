@@ -1,46 +1,52 @@
-<%= link_to "Back to list", houses_path %>
-<div class="container">
-  <div class="row p-2">
-    <div class="col-8 p-2">
-      <div class="card">
-        <h1><%= @house.name %></h1>
+
+  <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
+    <%= link_to "Back to list", houses_path, class: "btn btn-secondary rounded-5" %>
+  </div>
+  <div class="container px-5 p-10">
+    <div class="row">
+      <div class="col-8">
+        <div class="card p-2 my-3 border border-dark">
+          <h1><%= @house.name %></h1>
+        </div>
+        <div class="card p-1 my-3 border border-dark">
+          <h3>Description</h3>
+          <p><%= @house.description %></p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Description</h3>
-        <p><%= @house.description %></p>
-      </div>
-    </div>
-      <div class="col-4 p-2">
-        <div class="card">
+      <div class="col-4">
+        <div class="card p-3 my-3 border border-dark">
           <h3>Details</h3>
           <p>Price :<%= @house.price_per_night %></p>
           <p>Rating :</p>
           <p>People :<%= @house.number_of_people %></p>
-          <form class="card">
+          <form class="card border-0">
             <div class="row">
               <%= simple_form_for [@house, @reservation] do |f| %>
-              <div class="col-6">
-                <%= f.input :arrival_date, as: :date, html5: true %>
-              </div>
-              <div class="col-6">
-                <%= f.input :departure_date, as: :date, html5: true %>
-              </div>
-                <%= f.submit 'Book now !'%>
+                <div class="col-6">
+                  <%= f.input :arrival_date, as: :date, html5: true %>
+                </div>
+                <div class="col-6">
+                  <%= f.input :departure_date, as: :date, html5: true %>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <%= f.submit 'Book now !', class: "btn btn-outline-dark" %>
+                </div>
               <% end %>
             </div>
           </form>
         </div>
+      </div>
 
 
-    <% if current_user == @house.user %>
-      <%= link_to "Edit this house", edit_house_path(@house) %> |
-    <% end %>
+      <% if current_user == @house.user %>
+        <%= link_to "Edit this house", edit_house_path(@house) %> |
+      <% end %>
 
-    <% if current_user == @house.user %>
-      <%= link_to "Delete",
-        house_path(@house),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    <% end %>
+      <% if current_user == @house.user %>
+        <%= link_to "Delete",
+          house_path(@house),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      <% end %>
+    </div>
   </div>
-</div>
