@@ -1,7 +1,8 @@
 class House < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
-  
+  has_many :reservations, dependent: :destroy
+
   validates :name, :address, :price_per_night, :number_of_people, :description, presence: true
   validates :name, :address, :description, uniqueness: true
   validates :name, length: { minimum: 5 }
