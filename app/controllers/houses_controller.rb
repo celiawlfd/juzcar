@@ -20,18 +20,23 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
+    @house.user = current_user
     if @house.save
       redirect_to house_path(@house)
     else
+      puts @house.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
+
+
 
   def destroy
     @house = House.find(params[:id])
     @house.destroy
     redirect_to  houses_path, status: :see_other
   end
+
 
   def update
     @house = House.find(params[:id])
