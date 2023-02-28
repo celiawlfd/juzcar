@@ -5,11 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-<<<<<<< HEAD
-  
-=======
   resources :houses do
     resources :reservations, only: [:create]
   end
->>>>>>> master
 end
