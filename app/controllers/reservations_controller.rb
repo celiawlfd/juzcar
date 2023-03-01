@@ -38,7 +38,5 @@ class ReservationsController < ApplicationController
       date.jd
     end
     new_reservation.intersect?(days_booked)
-    #   redirect_to house_path(@house), alert: "The dates are not available"
-    # end
   end
 end
