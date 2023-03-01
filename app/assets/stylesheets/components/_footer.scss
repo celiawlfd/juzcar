@@ -2,11 +2,11 @@
   position: relative;
   text-align: center;
   width: 100%;
-  height: 200px;
+  height: 100%;
   line-height: 60px;
   display: block;
   margin-top: 80px;
-  background-position: bottom;
+  background-color: rgb(75, 164, 75);
 }
 
 footer p {
@@ -18,6 +18,7 @@ footer p {
 footer .fa-brands {
   font-size:xx-large;
   width: 60px;
+  color: white;
 }
 
 footer > .smurf {
