@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+.houses-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.houses-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 0 110px;
+}
+
+.card{
+  margin: 0 37px;
+
+}
+
+.banner_1{
+  margin: 30px 20px;
+  border-radius: 10px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_1 > h1, .banner_1 > p{
+  color:white;
+}
+
+
+.card > a{
+  text-decoration: none;
+}
