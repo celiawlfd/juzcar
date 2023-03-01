@@ -1,0 +1,40 @@
+.main_container{
+  display: flex;
+  height: 80vh;
+
+
+}
+
+.right-box{
+width: 120%;
+margin-left: 30px;
+}
+
+.logo_name{
+  display: flex;
+  color: white;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.first-2, .middle-2, .last-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px
+}
+
+.img-left{
+  width: 50vw;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.img-left > h3{
+margin-top: 25vh;
+}
+
+.button{
+  
+}

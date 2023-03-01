@@ -1,20 +1,34 @@
 
-<div class="container">
-  <h1>Add your new smurf's house</h1>
-  <hr>
-  <div class="form">
-    <%= simple_form_for @house do |f| %>
-    <div class="first-3">
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :price_per_night %>
+<div class="main_container">
+  <div class="img-left" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://yesofcorsa.com/wp-content/uploads/2017/12/The-Smurfs-The-Lost-Village-Wallpaper-HQ1.jpg);">
+    <div class="logo_name">
+       <%# <%= image_tag "https://res.cloudinary.com/dtdr8cuym/image/upload/v1677599363/house_logo_fxqvqi.png" %>
+      <h3>Juzcar</h3>
     </div>
-    <div class="last-3">
-      <%= f.input :number_of_people %>
-      <%= f.input :description %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+    <h3>BECOME A NEW SMURFER !</h3>
+  </div>
+  <div class="right-box">
+    <h1>Add your new smurf's house</h1>
+    <hr>
+    <div class="form">
+      <%= simple_form_for @house do |f| %>
+      <div class="first-2">
+        <%= f.input :name %>
+        <%= f.input :address %>
+      </div>
+      <div class="middle-2">
+        <%= f.input :price_per_night %>
+        <%= f.input :number_of_people %>
+      </div>
+      <div class="last-2">
+        <%= f.input :description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+      </div>
+      <div class="button">
+        <%= link_to "Back", :back%>
+        <%= f.submit "Smurf!" %>
+      </div>
+      <% end %>
     </div>
-    <%= f.submit "Smurf!" %>
-    <% end %>
   </div>
 </div>
