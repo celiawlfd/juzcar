@@ -13,20 +13,20 @@
     <div class="form">
       <%= simple_form_for @house do |f| %>
       <div class="first-2">
-        <%= f.input :name %>
-        <%= f.input :address %>
+        <%= f.input :name, class: "field" %>
+        <%= f.input :address, class: "field"%>
       </div>
       <div class="middle-2">
-        <%= f.input :price_per_night %>
-        <%= f.input :number_of_people %>
+        <%= f.input :price_per_night, class:'field' %>
+        <%= f.input :number_of_people, class: "field"%>
       </div>
       <div class="last-2">
-        <%= f.input :description %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+        <%= f.input :description, class: "field" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "field" %>
       </div>
-      <div class="button">
-        <%= link_to "Back", :back%>
-        <%= f.submit "Smurf!" %>
+      <div >
+      <%= link_to "Back", :back%>
+        <%= f.submit "Smurf!", class: "btn btn-outline-dark" %>
       </div>
       <% end %>
     </div>
