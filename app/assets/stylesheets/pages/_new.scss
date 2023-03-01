@@ -17,6 +17,10 @@ margin-left: 30px;
   margin-top: 50px;
 }
 
+.logo_name > h3 {
+  margin:0;
+}
+
 .first-2, .middle-2, .last-2{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,17 +38,20 @@ margin-left: 30px;
   border-bottom-left-radius: 10px;
 }
 
-.img-left > h3{
+.text-left{
 margin-top: 25vh;
 }
 
 .button{
-  
+
 }
 
 .field{
   border-radius: 10px;
-  background-color: red;
-  color:red;
 
+}
+.img_tag{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
