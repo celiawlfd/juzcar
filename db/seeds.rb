@@ -24,7 +24,7 @@ user = User.new(
   email: "celia@wilford.com",
   password: "123456"
 )
-user.savegit
+user.save
 
 puts user.valid?
 
