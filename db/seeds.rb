@@ -12,9 +12,22 @@ require "open-uri"
 
 puts "cleaning database"
 House.destroy_all
+User.destroy_all
 
 
 puts 'Creating 20 fake houses...'
+
+
+user = User.new(
+  username: "celiawilford",
+  characteristic: "???",
+  email: "celia@wilford.com",
+  password: "123456"
+)
+user.savegit
+
+puts user.valid?
+
 20.times do
   file = URI.open("https://static.wikia.nocookie.net/smurfs/images/f/ff/Smurf_House.png/revision/latest?cb=20110912224438")
   house = House.new(
@@ -23,8 +36,10 @@ puts 'Creating 20 fake houses...'
     price_per_night: rand(1000..5000),
     number_of_people: rand(1..10),
     description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
-    user_id: 1
   )
+
+  house.user = user
+
   house.photos.attach(io: file, filename: "house.png", content_type: "image/png")
   puts house.photos.attached?
   house.save
