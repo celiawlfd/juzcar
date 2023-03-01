@@ -23,17 +23,7 @@
           <form class="card border-0">
             <% unless current_user == @house.user %>
               <div class="row">
-                <%= simple_form_for [@house, @reservation] do |f| %>
-                  <div class="col-6">
-                    <%= f.input :arrival_date, as: :date, html5: true %>
-                  </div>
-                  <div class="col-6">
-                    <%= f.input :departure_date, as: :date, html5: true %>
-                  </div>
-                  <div class="col-12 d-flex justify-content-center">
-                    <%= f.submit 'Book now !', class: "btn btn-outline-dark" %>
-                  </div>
-                <% end %>
+
               </div>
             <% end %>
           </form>
@@ -48,3 +38,42 @@
        <% end %>
     </div>
   </div>
+
+
+
+
+
+        <%= simple_form_for [@house, @reservation] do |f| %>
+                  <div class="col-6">
+                    <%= f.input :arrival_date, as: :date, html5: true%>
+                  </div>
+                  <div class="col-6">
+                    <%= f.input :departure_date, as: :date, html5: true %>
+                  </div>
+                  <div class="col-12 d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Book now !</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <h5>Number for nights : <%=  %></h5>
+                            <p>Arrival date : <%= @reservation.arrival_date %></p>
+                            <p>Departure date : <%= @reservation.departure_date %></p>
+                            <h5>Total price : <%=  %></h5>
+                            <p>Price per night : <%= @house.price_per_night %></p>
+                            <%# <p>Juzcar fees (20%%) : <%= @house.price_per_night/0,2</p> %>
+                            <%# <p>Cleaning fees (10%) : <%= @house.price_per_night/0,1</p> %>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <%= f.submit 'Book now !', class: "btn btn-outline-dark"%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
