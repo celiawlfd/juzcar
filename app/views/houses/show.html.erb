@@ -17,7 +17,7 @@
       <div class="col-4">
         <div class="card p-3 my-3 border border-dark">
           <h3>Details</h3>
-          <p>Price :<%= @house.price_per_night %></p>
+          <p>Price : <%= @house.price_per_night %></p>
           <p>Rating :</p>
           <p>People :<%= @house.number_of_people %></p>
           <form class="card border-0">
@@ -40,12 +40,9 @@
   </div>
 
 
-
-
-
         <%= simple_form_for [@house, @reservation] do |f| %>
                   <div class="col-6">
-                    <%= f.input :arrival_date, as: :date, html5: true%>
+                    <%= f.input :arrival_date, as: :date, html5: true %>
                   </div>
                   <div class="col-6">
                     <%= f.input :departure_date, as: :date, html5: true %>
@@ -60,13 +57,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <h5>Number for nights : <%=  %></h5>
-                            <p>Arrival date : <%= @reservation.arrival_date %></p>
-                            <p>Departure date : <%= @reservation.departure_date %></p>
-                            <h5>Total price : <%=  %></h5>
-                            <p>Price per night : <%= @house.price_per_night %></p>
-                            <%# <p>Juzcar fees (20%%) : <%= @house.price_per_night/0,2</p> %>
-                            <%# <p>Cleaning fees (10%) : <%= @house.price_per_night/0,1</p> %>
+                            <h5>Number for nights : <span id="number_nights"></span></h5>
+                            <p>Arrival date : <span id="arrival_date_value"></span></p>
+                            <p>Departure date : <span id="departure_date_value"></span></p>
+                            <h5>Total price : <span id="total_price"></span> </h5>
+                            <%# <p>Price for nights : <span id="total_price"></span></p> %>
+                            <%# <p>Juzcar fees (20%) :  <span id="juzcar_fees_price"></span></p> %>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,3 +73,64 @@
                     </div>
                   </div>
                 <% end %>
+
+
+<script>
+    // const totalPriceWithFeesSpan = document.getElementById("total_price_with_fees");
+    const totalPriceSpan = document.getElementById("total_price");
+    // const feesPriceSpan = document.getElementById("juzcar_fees_price");
+
+  const numberOfNightsSpan = document.getElementById("number_nights");
+
+
+  const arrivalDateId = document.getElementById("reservation_arrival_date");
+  const valueArrival = document.getElementById("arrival_date_value");
+  let arrivalDate = 0
+  let departureDate = 0
+  let numberNights = 0
+  let totalPrice = 0
+  let totalPriceWithFees = 0
+  let juzcarFees = 0
+
+  arrivalDateId.addEventListener("change", (event) => {
+    console.log(arrivalDateId)
+    arrivalDate = arrivalDateId.value
+    console.log(arrivalDate);
+    console.log(event.currentTarget);
+    valueArrival.textContent = arrivalDate
+    diffSubtract(departureDate, arrivalDate)
+  });
+
+  const departureDateId = document.getElementById("reservation_departure_date");
+  const valueDeparture = document.getElementById("departure_date_value");
+
+  departureDateId.addEventListener("change", (event) => {
+    console.log(departureDateId)
+    departureDate = departureDateId.value
+    console.log(departureDate);
+    console.log(event.currentTarget);
+    valueDeparture.textContent = departureDate
+    diffSubtract(departureDate, arrivalDate)
+  })
+
+  function diffSubtract(date1, date2) {
+    if (date1 != 0 && date2 != 0) {
+      const parsedArrivalDate = new Date(arrivalDate).getTime()
+      console.log(parsedArrivalDate)
+      const parsedDepartureDate = new Date(departureDate).getTime()
+      console.log(parsedDepartureDate)
+
+      numberNights = Math.ceil((parsedDepartureDate - parsedArrivalDate) / (1000 * 3600 * 24))
+      console.log(numberOfNightsSpan.textContent = numberNights);
+
+      totalPrice = numberNights * <%= @house.price_per_night %>
+      console.log(totalPriceSpan.textContent = totalPrice)
+
+      // juzcarFees = totalPrice * 0,2
+      // console.log(feesPriceSpan.textContent = juzcarFees)
+
+      // totalPriceWithFees = totalPrice + juzcarFees
+      // console.log(totalPriceWithFeesSpan.textContent = totalPriceWithFees)
+    }
+  }
+</script>
