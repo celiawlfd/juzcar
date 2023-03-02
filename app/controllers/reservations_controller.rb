@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     elsif check_availability(reservations)
       redirect_to house_path(@house), alert: "Sorry #{current_user.characteristic} Smurf...The dates are not available"
     elsif @reservation.save
-      redirect_to house_path(@house)
+      redirect_to house_path(@house), alert: "Smurftastic! Thank you for booking #{@house.name}"
     else
       render "houses/show", status: :unprocessable_entity
     end
