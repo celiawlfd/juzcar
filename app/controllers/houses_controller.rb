@@ -5,7 +5,9 @@ class HousesController < ApplicationController
   def index
     if params[:query].present?
       @houses = House.search_by_name_description_and_address(params[:query])
-    else
+    #   if params[:query].present == nil
+
+    # else
       @houses = House.all
     end
   end
@@ -13,7 +15,7 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @reservation = Reservation.new
-   
+
     @markers = [{
       lat: @house.latitude,
       lng: @house.longitude
