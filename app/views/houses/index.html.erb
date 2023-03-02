@@ -9,25 +9,30 @@
   </div>
 
 <div class="houses-container">
-  <div class="houses-card">
-    <% @houses.each do |house| %>
-      <%= link_to house_path(house.id) do %>
-        <div class="card border border-dark border-1 shadow-lg" style="width: 18rem;">
-          <div class="photo">
-            <% house.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:"card-img-top rounded-top"  %>
-            <% end %>
-          </div>
-          <div class="card-body pt-2 pb-0 bg-light">
-            <h5><%= house.name %></h5>
-            <p><%= house.address %></p>
-          </div>
-          <div class="d-flex justify-content-between card-footer">
-            <p><%= house.price_per_night %>€/night</p>
-            <p><%= house.number_of_people %> <i class="fa-solid fa-users"></i></p>
-          </div>
-        </div>
-      <% end %>
+    <% if @houses.empty? %>
+        <h2 id="nothing-found">No matches found for "<%= params[:query] %>"</h2>
+    <% else %>
+      <div class="houses-card">
+        <% @houses.each do |house| %>
+          <%= link_to house_path(house.id) do %>
+            <div class="card border border-dark border-1 shadow-lg" style="width: 18rem;">
+              <div class="photo">
+                <% house.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:"card-img-top rounded-top"  %>
+                <% end %>
+              </div>
+              <div class="card-body pt-2 pb-0 bg-light">
+                <h5><%= house.name %></h5>
+                <p><%= house.address %></p>
+              </div>
+              <div class="d-flex justify-content-between card-footer">
+                <p><%= house.price_per_night %>€/night</p>
+                <p><%= house.number_of_people %> <i class="fa-solid fa-users"></i></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
