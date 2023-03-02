@@ -1,25 +1,23 @@
 
 
-  <div class="banner border border-dark" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
-    <%= link_to "Back to list", houses_path, class: "btn btn-secondary rounded-5" %>
+  <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
   </div>
-  <div class="container px-5 p-10">
+  <div class="container px-5 p-10 top-margin-neg">
     <div class="row">
       <div class="col-8">
-        <div class="card p-2 my-3 border border-dark">
-          <h1><%= @house.name %></h1>
+        <div class="card p-3 my-3 border border-dark">
+          <h1 class="mb-0"><%= @house.name %></h1>
         </div>
-        <div class="card p-1 my-3 border border-dark">
+        <div class="card p-3 my-3 border border-dark">
           <h3>Description</h3>
-          <p><%= @house.description %></p>
+          <p class="mb-0"><%= @house.description %></p>
         </div>
       </div>
       <div class="col-4">
-        <div class="card p-3 my-3 border border-dark">
+        <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
           <h3>Details</h3>
-          <p>Price : <%= @house.price_per_night %></p>
-          <p>Rating :</p>
-          <p>People :<%= @house.number_of_people %></p>
+          <p class="fw-bold">Price : <%= @house.price_per_night %>€/night</p>
+          <p class="mb-1 fw-bold">People : <%= @house.number_of_people %></p>
           <form class="card border-0">
             <% unless current_user == @house.user %>
               <div class="row">
@@ -30,12 +28,13 @@
         </div>
       </div>
 
+      <div>
        <% if current_user == @house.user %>
-          <%= link_to "Edit this house", edit_house_path(@house) %> |
-          <%= link_to "Delete",
-          house_path(@house),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn-outline-dark " %>
+          <%= link_to "Delete", house_path(@house),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: "btn btn-outline-dark"%>
        <% end %>
+       </div>
     </div>
   </div>
 

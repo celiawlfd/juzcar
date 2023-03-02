@@ -15,6 +15,7 @@
           <%= link_to "Smurf your house", new_house_path, class: "btn btn-outline-dark" %>
         </li>
         <% if user_signed_in? %>
+        <li class="position-absolute top-50 start-50 translate-middle fw-bold fs-4">Hello Smurf <%= current_user.characteristic %></li>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dtdr8cuym/image/upload/v1677598189/y9curyad6ofwav0itn9i.jpg", class: "avatar dropdown-toggle border border-dark", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

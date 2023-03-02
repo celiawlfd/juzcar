@@ -1,29 +1,29 @@
 .footer {
-  position: absolute;
+  position: relative;
   text-align: center;
-  bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 100%;
   line-height: 60px;
   display: block;
-  }
+  margin-top: 80px;
+  background-color: rgb(75, 164, 75);
+}
 
- .bottom {
-    background-color: #c6e2e9;
-  }
+footer p {
+  line-height: 30px;
+  padding: 30px;
+  margin: 0px;
+}
 
-  footer p {
-    line-height: 30px;
-    padding: 30px;
-    margin: 0px;
-  }
+footer .fa-brands {
+  font-size:xx-large;
+  width: 60px;
+  color: white;
+}
 
-  footer .fa-brands {
-    font-size:xx-large;
-    width: 60px;
-  }
-
-  footer .smurf {
-    width: 5%;
-    text-align: right;
-  }
+footer > .smurf {
+  position: absolute;
+  width: 40px;
+  right: 160px;
+  top: -56px;
+}

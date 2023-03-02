@@ -3,26 +3,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .houses-card{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
-  padding: 0 110px;
+  gap: 45px;
 }
+
 
 .card{
   margin: 0 37px;
 
 }
 
+.banner > h1, .banner > p{
 
-
-.banner_1 > h1, .banner_1 > p{
   color:white;
 }
 
 
 .card > a{
   text-decoration: none;
+  color: black;
+}
+
+.rounded{
+  --bs-border-radius:10px !important;
+}
+.rouded-top{
+  --bs-border-radius-top-right:10px !important;
+  --bs-border-radius-top-left:10px !important;
+}
+
+@media(max-width: 1300px) {
+  .houses-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 995px) {
+  .houses-card {
+    grid-template-columns:  1fr 1fr;
+  }
+}
+
+@media(max-width: 660px) {
+  .houses-card {
+    grid-template-columns:  1fr;
+  }
 }
