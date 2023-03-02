@@ -12,18 +12,18 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <div class="row pe-3">
-          <div class="col-12">
+          <div class="row pe-3">
+            <div class="col-12 rounded">
               <%= form_with url: houses_path, method: :get, class: "d-flex" do %>
                 <%= text_field_tag :query,
                   params[:query],
-                  class: "form-control",
+                  class: "form-control search",
                   placeholder: "Find a house"
                 %>
-              <%= submit_tag "Search", class: "btn btn-outline-dark" %>
-            <% end %>
+                <%= submit_tag "Search", class: "btn btn-outline-dark", id:"btn-search" %>
+              <% end %>
+            </div>
           </div>
-        </div>
 
         <li class="nav-item me-3">
           <%= link_to "Smurf your house", new_house_path, class: "btn btn-outline-dark" %>
