@@ -1,36 +1,28 @@
-
-<div class="main_container">
-  <div class="img-left" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://yesofcorsa.com/wp-content/uploads/2017/12/The-Smurfs-The-Lost-Village-Wallpaper-HQ1.jpg);">
-    <div class="logo_name">
-      <%= image_tag "https://res.cloudinary.com/dtdr8cuym/image/upload/v1677599363/house_logo_fxqvqi.png", :class => "img_tag" %>
-      <h3>Juzcar</h3>
-    </div>
-    <div class="text-left">
-      <h3>BECOME A NEW SMURFER !</h3>
-    </div>
+<%= link_to "Back", :back, class: "btn btn-outline-dark my-3"%>
+<div class="d-flex border border-dark">
+  <div class="img-left" style="background-image: linear-gradient(rgba(250,250,250,0.1),rgba(250,250,250,0.1)), url(https://res.cloudinary.com/dtdr8cuym/image/upload/v1677764375/dbcf539c9af2a85b7cf60d8677e53a64_d9s5nl.jpg);">
   </div>
   <div class="right-box">
-    <h1>Add your new smurf's house</h1>
-    <hr>
-    <div class="form">
-      <%= simple_form_for @house do |f| %>
-      <div class="first-2">
-        <%= f.input :name, class: "field" %>
-        <%= f.input :address, class: "field"%>
-      </div>
-      <div class="middle-2">
-        <%= f.input :price_per_night, class:'field' %>
-        <%= f.input :number_of_people, as: :integer, class: "field"%>
-      </div>
-      <div class="last-2">
-        <%= f.input :description, class: "field" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "field" %>
-      </div>
-      <div >
-      <%= link_to "Back", :back%>
+    <div class="d-flex flex-column justify-content-between">
+      <h1>Add your new smurf's house</h1>
+      <hr>
+      <div class="form d-flex flex-column align-items-between">
+        <%= simple_form_for @house do |f| %>
+        <div class="first-2">
+          <%= f.input :name, class: "field" %>
+          <%= f.input :address, class: "field"%>
+        </div>
+        <div class="middle-2">
+          <%= f.input :price_per_night, class:'field' %>
+          <%= f.input :number_of_people, as: :integer, class: "field"%>
+        </div>
+        <div class="last-2">
+          <%= f.input :description, class: "field" %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "field" %>
+        </div>
         <%= f.submit "Smurf!", class: "btn btn-outline-dark" %>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
