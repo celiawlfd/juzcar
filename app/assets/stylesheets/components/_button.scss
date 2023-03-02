@@ -8,3 +8,23 @@
     background-color: $smurf;
   }
 }
+
+.btn-contrary {
+  font-weight: bold;
+  border-color: black;
+  border: none;
+}
+
+.btn-delete {
+  border-radius: 0px !important;
+  transition: 0.5s ease;
+  font-weight: bold;
+  background-color: white;
+  border-color: black;
+  &:hover {
+    border-radius: 7px !important;
+    background-color: rgb(250, 54, 54);
+    color: white;
+    border-color: black;
+  }
+}
