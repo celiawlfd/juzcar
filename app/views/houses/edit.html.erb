@@ -1,9 +1,1 @@
-<%= simple_form_for [@house] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :price_per_night %>
-  <%= f.input :number_of_people %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Submit changes", class: "btn btn-primary" %>
-<% end %>
+<%= render "form", house: @house %>
