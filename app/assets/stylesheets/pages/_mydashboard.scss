@@ -1,11 +1,18 @@
 .header-dash {
   background-color: white;
+  position: relative;
   height: 150px;
   margin: 30px 0;
+  .dash-smurf {
+    width: 70px;
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+  }
 }
 
 .card-reservation {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 233, 163);
   p, h3, h6 {
     text-align: center;
   }

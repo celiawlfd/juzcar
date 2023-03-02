@@ -1,5 +1,6 @@
 <div class="header-dash d-flex align-items-center justify-content-center border border-dark">
   <h1>Your dashboard</h1>
+  <img class="dash-smurf" src="https://res.cloudinary.com/dtdr8cuym/image/upload/v1677785773/kisspng-brainy-smurf-smurflily-the-smurfs-smurfmelody-anim-5d209cb9422863.576909171562418361271_jghsgu.png" alt="">
 </div>
 
 <div class="dash-title d-flex align-items-center justify-content-center border border-dark">
@@ -50,6 +51,9 @@
         <div class="d-flex flex-column flex-wrap">
           <h4 class="m-3">Reservations</h4>
           <div class="d-flex flex-wrap">
+            <% if house.reservations.empty? %>
+              <h6 class="mx-3">smurf... no reservation yet</h6>
+            <% end %>
             <% house.reservations.each do |reservation| %>
               <div class="card-reservation border border-dark border-1 card-house-res p-3 mx-3">
                 <h6>Renter Smurf</h6>
