@@ -13,11 +13,14 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @reservation = Reservation.new
-
-    @markers = [{
-      lat: @house.latitude,
-      lng: @house.longitude
-    }]
+    @markers = House.near(@house.address, 10).map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { house: house }),
+        marker_html: render_to_string(partial: "marker")
+        }
+    end
   end
 
   def edit
