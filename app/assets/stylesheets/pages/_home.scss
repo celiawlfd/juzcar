@@ -11,7 +11,7 @@
   gap: 45px;
 }
 
-.card{
+.houses-card > a >.card{
   height:100%;
 }
 
@@ -29,6 +29,8 @@ margin-bottom: 5px;
 .banner > h1, .banner > p{
   color:white;
 }
+
+
 
 h5{
   font-family: Oswald;
@@ -56,4 +58,10 @@ h5{
   .houses-card {
     grid-template-columns:  1fr;
   }
+}
+
+.greeting {
+  text-align: center;
+  margin-bottom: -15px;
+  margin-top: 14px;
 }

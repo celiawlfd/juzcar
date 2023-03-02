@@ -1,16 +1,12 @@
-.main_container{
-  display: flex;
-  height: 80vh;
-}
-
 .right-box{
 width: 120%;
-margin-left: 30px;
+padding: 30px;
+background-color: rgba(255, 255, 255, 0.669);
 }
 
 .logo_name{
   display: flex;
-  color: white;
+  color: black;
   justify-content: center;
   margin-top: 50px;
 }
@@ -29,25 +25,25 @@ margin-left: 30px;
 .img-left{
   width: 50vw;
   background-size: cover;
-  background-position: center;
-  color: white;
+  background-position: right;
+  color: black;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .text-left{
 margin-top: 25vh;
 }
 
-.button{
-
+.form-label {
+  font-weight: bolder;
 }
+
+
 
 .field{
   border-radius: 10px;
-
 }
+
 .img_tag{
   width: 40px;
   height: 40px;

@@ -32,6 +32,8 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+gem "pg_search"
+
 gem "devise"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -52,6 +54,9 @@ gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+
+#custom gems 
+gem "geocoder"
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 gem "autoprefixer-rails"

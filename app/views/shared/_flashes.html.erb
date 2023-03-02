@@ -1,11 +1,18 @@
 <% if notice %>
-	<div class="alert alert-info alert-dismissible fade show m-1" role="alert">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <%= notice %></div>
+	<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <img class="alert-smurf" src="https://res.cloudinary.com/dtdr8cuym/image/upload/v1677758254/kisspng-papa-smurf-the-smurfs-father-ray-mukada-magasin-sa-sirin-usaklar-pictures-free-download-5b750c4f183b48.1360731315343975190993_cudl5a.png" alt="">
+    <span><%= notice %></span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
 <% end %>
 <% if alert %>
-	<div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <%= alert %>
-	</div>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <img class="alert-smurf" src="https://res.cloudinary.com/dtdr8cuym/image/upload/v1677758254/kisspng-papa-smurf-the-smurfs-father-ray-mukada-magasin-sa-sirin-usaklar-pictures-free-download-5b750c4f183b48.1360731315343975190993_cudl5a.png" alt="">
+    <span><%= alert %></span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
 <% end %>
