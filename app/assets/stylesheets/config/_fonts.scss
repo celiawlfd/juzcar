@@ -7,6 +7,10 @@
 $body-font: "Nunito";
 $headers-font: 'Bangers', cursive;
 
+h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif !important;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

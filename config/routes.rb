@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :houses do
     resources :reservations, only: [:create]
   end
+
+  get "/mydashboard", to: "dashboards#mydashboard"
 end
