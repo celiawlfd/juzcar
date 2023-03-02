@@ -6,8 +6,10 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.house = @house
-    if check_availability(reservations)
-      redirect_to house_path(@house), alert: "The dates are not available"
+    if @reservation.arrival_date.nil? || @reservation.departure_date.nil?
+      redirect_to house_path(@house), alert: "Silly Smurf! You need to pick a date"
+    elsif check_availability(reservations)
+      redirect_to house_path(@house), alert: "Sorry #{current_user.characteristic} Smurf...The dates are not available"
     elsif @reservation.save
       redirect_to house_path(@house)
     else
@@ -30,13 +32,9 @@ class ReservationsController < ApplicationController
     reservations.each do |reservation|
       days_booked << (reservation.arrival_date..reservation.departure_date).to_a
     end
-    days_booked = days_booked.flatten.map do |date|
-      date.jd
-    end
+    days_booked = days_booked.flatten.map(&:jd)
     new_reservation = (Date.iso8601(params[:reservation][:arrival_date])..Date.iso8601(params[:reservation][:departure_date])).to_a
-    new_reservation = new_reservation.map do |date|
-      date.jd
-    end
+    new_reservation = new_reservation.map(&:jd)
     new_reservation.intersect?(days_booked)
   end
 end

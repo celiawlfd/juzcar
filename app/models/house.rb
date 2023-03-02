@@ -8,4 +8,6 @@ class House < ApplicationRecord
   validates :name, length: { minimum: 5 }
   validates :description, length: { minimum: 10 }
   validates :price_per_night, :number_of_people, numericality: { greater_than: 0 }
+  validates :number_of_people, :price_per_night, numericality: { only_integer: true }
+  validates :photos, presence: true
 end
