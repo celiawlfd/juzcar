@@ -11,29 +11,33 @@
   gap: 45px;
 }
 
-
 .card{
-  margin: 0 37px;
+  height:100%;
+}
 
+.card-footer{
+border: none;
+  p{
+    margin-bottom: 5px;
+  }
+}
+
+.card-body > p {
+margin-bottom: 5px;
 }
 
 .banner > h1, .banner > p{
-
   color:white;
 }
 
+h5{
+  font-family: Oswald;
+  font-weight: 700 ;
+}
 
-.card > a{
+.houses-card > a{
   text-decoration: none;
   color: black;
-}
-
-.rounded{
-  --bs-border-radius:10px !important;
-}
-.rouded-top{
-  --bs-border-radius-top-right:10px !important;
-  --bs-border-radius-top-left:10px !important;
 }
 
 @media(max-width: 1300px) {
