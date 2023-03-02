@@ -78,11 +78,11 @@
 
 <script>
   const totalPriceSpan = document.getElementById("total_price");
-
   const numberOfNightsSpan = document.getElementById("number_nights");
 
   const arrivalDateId = document.getElementById("reservation_arrival_date");
   const valueArrival = document.getElementById("arrival_date_value");
+
   let arrivalDate = 0
   let departureDate = 0
   let numberNights = 0
@@ -123,12 +123,6 @@
 
       totalPrice = numberNights * <%= @house.price_per_night %>
       console.log(totalPriceSpan.textContent = totalPrice)
-
-      // juzcarFees = totalPrice * 0,2
-      // console.log(feesPriceSpan.textContent = juzcarFees)
-
-      // totalPriceWithFees = totalPrice + juzcarFees
-      // console.log(totalPriceWithFeesSpan.textContent = totalPriceWithFees)
     }
   }
 </script>

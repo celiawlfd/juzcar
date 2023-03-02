@@ -20,5 +20,4 @@ class House < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end

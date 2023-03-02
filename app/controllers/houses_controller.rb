@@ -5,9 +5,7 @@ class HousesController < ApplicationController
   def index
     if params[:query].present?
       @houses = House.search_by_name_description_and_address(params[:query])
-    #   if params[:query].present == nil
-
-    # else
+    else
       @houses = House.all
     end
   end
@@ -21,7 +19,6 @@ class HousesController < ApplicationController
       lng: @house.longitude
     }]
   end
-
 
   def edit
     @house = House.find(params[:id])
