@@ -5,7 +5,7 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif: $body-font;
+$font-family-sans-serif: "Nunito";
 $headings-font-family:   $headers-font;
 $body-bg:                white;
 $font-size-base:         1rem;
@@ -26,5 +26,5 @@ $border-radius-sm: 2px;
 // Override other variables below!
 body{
   background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("https://www.canalbd.net/img/couvpage/29/3600121166295_cg.jpg") !important;
-
+  font-family: "Nunito" !important;
 }
