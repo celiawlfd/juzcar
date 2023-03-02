@@ -15,11 +15,12 @@
       </div>
 
       <div class="col-4">
-        <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
-          <h3>Details</h3>
-          <p class="fw-bold">Price : <%= @house.price_per_night %>€/night</p>
-          <p class="mb-1 fw-bold">People : <%= @house.number_of_people %></p>
-        </div>
+        <div class="col-sticky">
+          <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
+            <h3>Details</h3>
+            <p class="fw-bold">Price : <%= @house.price_per_night %>€/night</p>
+            <p class="mb-1 fw-bold">People : <%= @house.number_of_people %></p>
+          </div>
           <% unless current_user == @house.user %>
             <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
             <h3>Select dates</h3>
@@ -44,8 +45,6 @@
                           <p>Arrival date : <span id="arrival_date_value"></span></p>
                           <p>Departure date : <span id="departure_date_value"></span></p>
                           <h5>Total price : <span id="total_price"></span> </h5>
-                          <%# <p>Price for nights : <span id="total_price"></span></p> %>
-                          <%# <p>Juzcar fees (20%) :  <span id="juzcar_fees_price"></span></p> %>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
@@ -58,15 +57,16 @@
               <% end %>
             </div>
           <% end %>
+          <div class="d-flex justify-content-center">
+            <% if current_user == @house.user %>
+                <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn-outline-dark me-3" %>
+                <%= link_to "Delete", house_path(@house),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-delete"%>
+            <% end %>
+          </div>
         </div>
+      </div>
 
-      <div>
-       <% if current_user == @house.user %>
-          <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn-outline-dark " %>
-          <%= link_to "Delete", house_path(@house),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-delete"%>
-       <% end %>
-       </div>
     </div>
   </div>
 
