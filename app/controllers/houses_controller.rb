@@ -13,7 +13,13 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @reservation = Reservation.new
+   
+    @markers = [{
+      lat: @house.latitude,
+      lng: @house.longitude
+    }]
   end
+
 
   def edit
     @house = House.find(params[:id])
