@@ -2,10 +2,11 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:create]
 
   def create
+    reservations = @house.reservations
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.house = @house
-    if check_availability
+    if check_availability(reservations)
       redirect_to house_path(@house), alert: "The dates are not available"
     elsif @reservation.save
       redirect_to house_path(@house)
@@ -24,10 +25,9 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:arrival_date, :departure_date)
   end
 
-  def check_availability
-    @reservations = Reservation.all
+  def check_availability(reservations)
     days_booked = []
-    @reservations.each do |reservation|
+    reservations.each do |reservation|
       days_booked << (reservation.arrival_date..reservation.departure_date).to_a
     end
     days_booked = days_booked.flatten.map do |date|
