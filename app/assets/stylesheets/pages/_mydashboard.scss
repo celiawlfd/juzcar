@@ -11,8 +11,26 @@
   }
 }
 
+.card-house-res {
+  height: 160px;
+  width: 230px;
+  background-color: rgb(160, 199, 228);
+  p {
+    margin-bottom: 0px;
+  }
+}
+
 .dash-title {
   background-color: rgb(147, 199, 151);
   height: 90px;
   margin: 30px 0;
+}
+
+.your-houses {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-house {
+  background-color: white;
 }
