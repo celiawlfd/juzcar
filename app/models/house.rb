@@ -10,4 +10,12 @@ class House < ApplicationRecord
   validates :price_per_night, :number_of_people, numericality: { greater_than: 0 }
   validates :number_of_people, :price_per_night, numericality: { only_integer: true }
   validates :photos, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_description_and_address,
+    against: [ :name, :description, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
