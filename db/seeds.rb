@@ -128,8 +128,8 @@ photos = [
     description: descriptions[i],
   )
   house.user = user
-  house.photos.attach(io: file, filename: "house.png", content_type: "image/png")
-  puts house.photos.attached?
+  house.photo.attach(io: file, filename: "house.png", content_type: "image/png")
+  puts house.photo.attached?
   house.save
   puts "Creating id for : #{house[:id]}"
 end
