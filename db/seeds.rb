@@ -95,6 +95,14 @@ descriptions = [
 ]
 
 photos = [
+  "https://i-mom.unimedias.fr/2020/09/16/je-decouvre-les-schtroumpfs.jpg?auto=format%2Ccompress&cs=tinysrgb&h=630&w=1200",
+  "https://media.sudouest.fr/2005848/1000x500/so-5e92043166a4bd41734114ff-ph0.jpg?v=1586680700",
+  "https://www.serieously.com/app/uploads/2021/05/les-schtroumpfs-1.jpg",
+  "http://1.bp.blogspot.com/--krYl7IlP3g/TgL9SrliLaI/AAAAAAAAAGk/IU6pwJtuFF8/s1600/smurf-village-abu-dhabi.jpg",
+  "http://cdn.supersoluce.com/file/docs/docid_4f719c178f152f5d66011408/elemid_4ee9fac00a2fe93e0e000014/thumb_1421316230-1.jpg",
+  "https://www.dhnet.be/resizer/qlAJPE6T-KXD6RkuF6W83xwSXso=/1620x1080/filters:format(jpeg):focal(694.5x354:704.5x344)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
+  "http://www.topkool.com/fr/wp-content/uploads/2013/04/les-schtroumpfs-004.jpg",
+  "https://bdi.dlpdomain.com/player/Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg",
   "https://www.pngitem.com/pimgs/m/13-139660_transparent-smurf-clipart-smurf-house-the-lost-village.png",
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de017638-1536-4590-ae5e-a00736692c58/d4kba3s-0fedd760-7d66-4e5e-b51f-d560acf64862.jpg/v1/fill/w_636,h_781,q_75,strp/a_smurf_house_02_by_the_torch_d4kba3s-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzgxIiwicGF0aCI6IlwvZlwvZGUwMTc2MzgtMTUzNi00NTkwLWFlNWUtYTAwNzM2NjkyYzU4XC9kNGtiYTNzLTBmZWRkNzYwLTdkNjYtNGU1ZS1iNTFmLWQ1NjBhY2Y2NDg2Mi5qcGciLCJ3aWR0aCI6Ijw9NjM2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.zV_dBqBZveBr2um017TtRm9BfCPBfYcYj74IKWdnvXY",
   "https://static.wikia.nocookie.net/smurfs/images/f/ff/Smurf_House.png/revision/latest?cb=20110912224438",
@@ -107,15 +115,7 @@ photos = [
   "https://www.pngkey.com/png/full/304-3043636_mountains-blue-smurf-house.png",
   "https://static.wikia.nocookie.net/smurfs/images/9/97/Geologist_Smurf%27s_Hut.jpeg/revision/latest?cb=20150702231202",
   "https://static.wikia.nocookie.net/smurfs/images/1/15/Glow_Smurf_Grove_Hut.png/revision/latest?cb=20160604000022",
-  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png",
-  "je-decouvre-les-schtroumpfs.jpg",
-  "so-5e92043166a4bd41734114ff-ph0.jpg",
-  "les-schtroumpfs-1.jpg",
-  "smurf-village-abu-dhabi.jpg",
-  "thumb_1421316230-1.jpg",
-  "GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
-  "les-schtroumpfs-004.jpg",
-  "Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg"
+  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png"
 ]
 
 100.times do |i|
