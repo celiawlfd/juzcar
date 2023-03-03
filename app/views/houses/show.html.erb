@@ -4,7 +4,8 @@
     <div class="row">
       <div class="col-8">
         <div class="card p-3 my-3 border border-dark">
-          <h1 class="mb-0"><%= @house.name %></h1>
+          <h1><%= @house.name %></h1>
+          <p class="mb-0"><%= @house.address %></p>
         </div>
         <div class="card p-3 my-3 border border-dark">
           <h3>Description</h3>
@@ -47,7 +48,7 @@
                           <h5>Number for nights : <span id="number_nights"></span></h5>
                           <p>Arrival date : <span id="arrival_date_value"></span></p>
                           <p>Departure date : <span id="departure_date_value"></span></p>
-                          <h5>Total price : <span id="total_price"></span> </h5>
+                          <h5>Total price : <span id="total_price"></span> €</h5>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
