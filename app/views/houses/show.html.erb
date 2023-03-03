@@ -16,16 +16,21 @@
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
         <div class="card p-3 my-3 border border-dark">
           <div class="row">
-            <div class="col-9">
-              <p class= "btn border-0"><strong>Reviews</strong></p>
-            </div>
-            <div class="col-3 text-end">
-              <%= link_to "Add a review", new_house_review_path(@house), class: "btn btn-outline-dark" %>
-            </div>
+
+            <%# <% unless current_user.reservations.where(house_id: params[:id]).empty? %>
+            <% if Reservation.where(house_id: params[:id], user: current_user).any? %>
+              <h3>Add a review</h3>
+              <%= simple_form_for [@house, @review] do |f| %>
+                <%= f.input :content %>
+                <%= f.input :rating %>
+                <%= f.submit "Submit review", class: "btn btn-ouline-dark" %>
+              <% end %>
+
+            <% end %>
           </div>
+          <h3>Reviews</h3>
           <ul class="list-group border-top">
             <% @house.reviews.each do |review| %>
               <li class="list-group-item">
@@ -39,7 +44,7 @@
                   <div class="col-5 text-end">
                     <%= link_to "Delete",
                       review_path(review),
-                      class: "text-end",
+                      class: "text-end btn btn-ouline-dark",
                       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
                     %>
                   </div>

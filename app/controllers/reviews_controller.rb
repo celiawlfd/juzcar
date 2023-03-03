@@ -7,11 +7,12 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @reservation = Reservation.new
     @review.house = @house
     if @review.save
       redirect_to house_path(@house)
     else
-      render :new, status: :unprocessable_entity
+      render "houses/show", status: :unprocessable_entity
     end
   end
 

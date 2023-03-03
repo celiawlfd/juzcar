@@ -13,6 +13,7 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @reservation = Reservation.new
+    @review = Review.new
     @markers = House.near(@house.address, 10).map do |house|
       {
         lat: house.latitude,
