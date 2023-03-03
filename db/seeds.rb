@@ -107,17 +107,25 @@ photos = [
   "https://www.pngkey.com/png/full/304-3043636_mountains-blue-smurf-house.png",
   "https://static.wikia.nocookie.net/smurfs/images/9/97/Geologist_Smurf%27s_Hut.jpeg/revision/latest?cb=20150702231202",
   "https://static.wikia.nocookie.net/smurfs/images/1/15/Glow_Smurf_Grove_Hut.png/revision/latest?cb=20160604000022",
-  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png"
+  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png",
+  "je-decouvre-les-schtroumpfs.jpg",
+  "so-5e92043166a4bd41734114ff-ph0.jpg",
+  "les-schtroumpfs-1.jpg",
+  "smurf-village-abu-dhabi.jpg",
+  "thumb_1421316230-1.jpg",
+  "GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
+  "les-schtroumpfs-004.jpg",
+  "Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg"
 ]
 
-100.times do
-  file = URI.open(photos.sample)
+100.times do |i|
+  file = URI.open(photos[i])
   house = House.new(
-    name: names.sample,
-    address: addresses.sample,
+    name: names[i],
+    address: addresses[i],
     price_per_night: rand(1000..5000),
     number_of_people: rand(1..10),
-    description: descriptions.sample,
+    description: descriptions[i],
   )
   house.user = user
   house.photos.attach(io: file, filename: "house.png", content_type: "image/png")
