@@ -1,5 +1,5 @@
  <div class="banner banner-show" style="background-image: url('<%= cl_image_path @house.photo.key %>')">
-  </div>
+ </div>
   <div class="container px-5 p-10 top-margin-neg">
     <div class="row">
       <div class="col-8">
@@ -15,6 +15,38 @@
               data-controller="map"
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+        <div class="card p-3 my-3 border border-dark">
+          <div class="row">
+            <div class="col-9">
+              <p class= "btn border-0"><strong>Reviews</strong></p>
+            </div>
+            <div class="col-3 text-end">
+              <%= link_to "Add a review", new_house_review_path(@house), class: "btn btn-outline-dark" %>
+            </div>
+          </div>
+          <ul class="list-group border-top">
+            <% @house.reviews.each do |review| %>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-5">
+                    <%= review.content %>
+                  </div>
+                  <div class="col-2 text-center">
+                    <strong> <%= review.rating %> <i class="fa-regular fa-star"></i> </strong>
+                  </div>
+                  <div class="col-5 text-end">
+                    <%= link_to "Delete",
+                      review_path(review),
+                      class: "text-end",
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                    %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
 
