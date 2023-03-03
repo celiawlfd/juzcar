@@ -95,6 +95,14 @@ descriptions = [
 ]
 
 photos = [
+  "https://i-mom.unimedias.fr/2020/09/16/je-decouvre-les-schtroumpfs.jpg?auto=format%2Ccompress&cs=tinysrgb&h=630&w=1200",
+  "https://media.sudouest.fr/2005848/1000x500/so-5e92043166a4bd41734114ff-ph0.jpg?v=1586680700",
+  "https://www.serieously.com/app/uploads/2021/05/les-schtroumpfs-1.jpg",
+  "http://1.bp.blogspot.com/--krYl7IlP3g/TgL9SrliLaI/AAAAAAAAAGk/IU6pwJtuFF8/s1600/smurf-village-abu-dhabi.jpg",
+  "http://cdn.supersoluce.com/file/docs/docid_4f719c178f152f5d66011408/elemid_4ee9fac00a2fe93e0e000014/thumb_1421316230-1.jpg",
+  "https://www.dhnet.be/resizer/qlAJPE6T-KXD6RkuF6W83xwSXso=/1620x1080/filters:format(jpeg):focal(694.5x354:704.5x344)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
+  "http://www.topkool.com/fr/wp-content/uploads/2013/04/les-schtroumpfs-004.jpg",
+  "https://bdi.dlpdomain.com/player/Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg",
   "https://www.pngitem.com/pimgs/m/13-139660_transparent-smurf-clipart-smurf-house-the-lost-village.png",
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de017638-1536-4590-ae5e-a00736692c58/d4kba3s-0fedd760-7d66-4e5e-b51f-d560acf64862.jpg/v1/fill/w_636,h_781,q_75,strp/a_smurf_house_02_by_the_torch_d4kba3s-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzgxIiwicGF0aCI6IlwvZlwvZGUwMTc2MzgtMTUzNi00NTkwLWFlNWUtYTAwNzM2NjkyYzU4XC9kNGtiYTNzLTBmZWRkNzYwLTdkNjYtNGU1ZS1iNTFmLWQ1NjBhY2Y2NDg2Mi5qcGciLCJ3aWR0aCI6Ijw9NjM2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.zV_dBqBZveBr2um017TtRm9BfCPBfYcYj74IKWdnvXY",
   "https://static.wikia.nocookie.net/smurfs/images/f/ff/Smurf_House.png/revision/latest?cb=20110912224438",
@@ -107,18 +115,70 @@ photos = [
   "https://www.pngkey.com/png/full/304-3043636_mountains-blue-smurf-house.png",
   "https://static.wikia.nocookie.net/smurfs/images/9/97/Geologist_Smurf%27s_Hut.jpeg/revision/latest?cb=20150702231202",
   "https://static.wikia.nocookie.net/smurfs/images/1/15/Glow_Smurf_Grove_Hut.png/revision/latest?cb=20160604000022",
-  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png",
-  "je-decouvre-les-schtroumpfs.jpg",
-  "so-5e92043166a4bd41734114ff-ph0.jpg",
-  "les-schtroumpfs-1.jpg",
-  "smurf-village-abu-dhabi.jpg",
-  "thumb_1421316230-1.jpg",
-  "GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
-  "les-schtroumpfs-004.jpg",
-  "Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg"
+  "https://www.seekpng.com/png/full/419-4193353_smurf-smurfette-mountain-home-smurf-home.png"
 ]
 
-100.times do |i|
+photos1 = [
+  "https://i-mom.unimedias.fr/2020/09/16/je-decouvre-les-schtroumpfs.jpg?auto=format%2Ccompress&cs=tinysrgb&h=630&w=1200",
+  "https://media.sudouest.fr/2005848/1000x500/so-5e92043166a4bd41734114ff-ph0.jpg?v=1586680700",
+  "https://www.serieously.com/app/uploads/2021/05/les-schtroumpfs-1.jpg",
+  "http://1.bp.blogspot.com/--krYl7IlP3g/TgL9SrliLaI/AAAAAAAAAGk/IU6pwJtuFF8/s1600/smurf-village-abu-dhabi.jpg",
+  "http://cdn.supersoluce.com/file/docs/docid_4f719c178f152f5d66011408/elemid_4ee9fac00a2fe93e0e000014/thumb_1421316230-1.jpg",
+  "https://www.dhnet.be/resizer/qlAJPE6T-KXD6RkuF6W83xwSXso=/1620x1080/filters:format(jpeg):focal(694.5x354:704.5x344)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/GVV23D7ZTVGVHLRWMMBQ63O43E.jpg",
+  "http://www.topkool.com/fr/wp-content/uploads/2013/04/les-schtroumpfs-004.jpg",
+  "https://bdi.dlpdomain.com/player/Q1XVCLOGs8Qn2onTecumT0zZGK5K2zPI-page3-1200.jpg"
+]
+
+names1 = [
+  "Cosy cottage between city and nature",
+  "Charming 2 bedroom house in Forest",
+  "Nest Apartment with Panoramic City Views",
+  "Spacious and modern loft",
+  "Tiny House - Immersed in Nature",
+  "Modern city center apartment with great location",
+  "Charming stay",
+  "Appartement Duplex 2 chambres"
+]
+
+descriptions1 = [
+  "Coline and Arnaud welcome you in their warm and elegant annex. This place full of memories is ideal for a romantic stay or a business trip. Next to the Soigne Forest and Lake Genval, the house is located 20min from the center of Brussels, next to a train station (La Hulpe) and the E411 motorway. The property is fully secured and we will be happy to welcome you with fresh eggs and vegetables from the vegetable garden. Pets allowed on request.",
+  "Welcome to our charming house! Nestled in a very quiet and beautiful street between the magnificent Duden Park and the Forest National venue, our home is ideally located for your stay in Brussels. With easy access to public transports, you'll be able to easily visit all the top attractions.",
+  "Admire cabinets/shelves filled with fascinating bric-a-brac, then choose a book to read on an inviting couch. Original paintings and images of industrial design share this open loft-style space. 18th Floor Bird's eye views make balconies the place to be in summer. Step balconies for breakfast at sunrise or drinks at sunset.",
+  "Enjoy a stylish and central location a 10-minute walk from the city center. Equipped with all the modern amenities, this loft recently furnished in a former Brussels brewery offers a luxury comfort that will convince the most discerning travelers.",
+  "The Tennessee Tiny House is located on a private 4-hectare property near Genappe, 30 minutes from Brussels, but a world away. Dozens of hectares of rolling hills around the property give total privacy & isolation as huge windows open up onto peaceful views of woods, grassland & wildlife.",
+  "The apartment is located in the city center, just a few minutes’ walk from Grand Place, Manneken Pis, Place Sainte-Catherine and multiple metro stations. The vibrant area is known for its livelihood, many restaurants and cafés, and is one of the most desired area’s for locals to live in. The apartment building stands out from its neighbors, thanks to its exceptional architectural design.",
+  "Welcome to our renovated barn on a archway of Brussels. Escape the hustle and bustle of the city in the picturesque village of Sint-Anna-Pede. The ideal location for a city trip to Brussels or a walking or cycling holiday in Pajottenland.",
+  "Large spacious, quiet and bright duplex with 2 bedrooms overlooking the garden and covered terrace, in the heart of the city. Close to the center and all amenities (close to public transport, Luxembourg train station and the European Commission), in a district of bars, shops, cinemas, restaurants and museums."
+]
+
+addresses1 = [
+  "6 Rue Duquesnoy, 1000 Bruxelles",
+  "Rue des Eperonniers 49, 1000 Bruxelles",
+  "Pl. de la Vieille Halle aux Blés 39, 1000 Bruxelles",
+  "Grand Place 11, 1000 Bruxelles",
+  "Rue des Alexiens 63, 1000 Bruxelles",
+  "Rue Haute 9, 1000 Bruxelles",
+  "Rue de Rollebeek 30, 1000 Bruxelles",
+  "Rue des Minimes 2, 1000 Bruxelles"
+]
+
+8.times do |i|
+  file = URI.open(photos1[i])
+  house = House.new(
+    name: names1[i],
+    address: addresses1[i],
+    price_per_night: rand(1000..5000),
+    number_of_people: rand(1..10),
+    description: descriptions1[i],
+  )
+  house.user = user
+  house.photo.attach(io: file, filename: "house.png", content_type: "image/png")
+  puts house.photo.attached?
+  house.save
+  puts "Creating id for : #{house[:id]}"
+end
+
+20.times do |i|
   file = URI.open(photos[i])
   house = House.new(
     name: names[i],
@@ -128,8 +188,8 @@ photos = [
     description: descriptions[i],
   )
   house.user = user
-  house.photos.attach(io: file, filename: "house.png", content_type: "image/png")
-  puts house.photos.attached?
+  house.photo.attach(io: file, filename: "house.png", content_type: "image/png")
+  puts house.photo.attached?
   house.save
   puts "Creating id for : #{house[:id]}"
 end

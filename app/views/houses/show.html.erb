@@ -1,10 +1,11 @@
- <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
-  </div>
+ <div class="banner banner-show" style="background-image: url('<%= cl_image_path @house.photo.key %>')">
+ </div>
   <div class="container px-5 p-10 top-margin-neg">
     <div class="row">
       <div class="col-8">
         <div class="card p-3 my-3 border border-dark">
-          <h1 class="mb-0"><%= @house.name %></h1>
+          <h1><%= @house.name %></h1>
+          <p class="mb-0"><%= @house.address %></p>
         </div>
         <div class="card p-3 my-3 border border-dark">
           <h3>Description</h3>
@@ -15,6 +16,7 @@
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+
         <div class="card p-3 my-3 border border-dark">
           <div class="row">
             <div class="col-9">
@@ -46,7 +48,7 @@
             <% end %>
           </ul>
         </div>
-    </div>
+      </div>
 
       <div class="col-4">
         <div class="col-sticky">
@@ -78,7 +80,7 @@
                           <h5>Number for nights : <span id="number_nights"></span></h5>
                           <p>Arrival date : <span id="arrival_date_value"></span></p>
                           <p>Departure date : <span id="departure_date_value"></span></p>
-                          <h5>Total price : <span id="total_price"></span> </h5>
+                          <h5>Total price : <span id="total_price"></span> €</h5>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>

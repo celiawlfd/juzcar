@@ -1,24 +1,22 @@
-<%= link_to "Back", :back, class: "btn btn-outline-dark my-3"%>
-<div class="d-flex border border-dark">
-  <div class="img-left" style="background-image: linear-gradient(rgba(250,250,250,0.1),rgba(250,250,250,0.1)), url(https://res.cloudinary.com/dtdr8cuym/image/upload/v1677764375/dbcf539c9af2a85b7cf60d8677e53a64_d9s5nl.jpg);">
-  </div>
-  <div class="right-box">
-    <div class="d-flex flex-column justify-content-between">
+<%= link_to "Back", :back, class: "back btn btn-outline-dark my-3"%>
+
+<div class="form-w">
+  <div class="d-flex flex-column border border-dark w-100">
+    <div class="img-left" style="background-image: linear-gradient(rgba(250,250,250,0.3),rgba(250,250,250,0.3)), url(https://res.cloudinary.com/dtdr8cuym/image/upload/v1677764375/dbcf539c9af2a85b7cf60d8677e53a64_d9s5nl.jpg);">
       <h1>Add your new smurf's house</h1>
-      <hr>
-      <div class="form d-flex flex-column align-items-between">
+    </div>
+    <div class="right-box">
+      <div class="d-flex flex-column justify-content-between">
         <%= simple_form_for house do |f| %>
-        <div class="first-2">
-          <%= f.input :name, class: "field" %>
-          <%= f.input :address, class: "field"%>
-        </div>
-        <div class="middle-2">
-          <%= f.input :price_per_night, class:'field' %>
-          <%= f.input :number_of_people, as: :integer, class: "field"%>
-        </div>
-        <div class="last-2">
-          <%= f.input :description, class: "field" %>
-          <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "field" %>
+        <div class="form-inputs">
+          <%= f.input :name%>
+          <%= f.input :address,
+          input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+          <%= f.input :price_per_night%>
+          <%= f.input :number_of_people, as: :integer%>
+          <%= f.input :description%>
+          <%= f.input :photo, as: :file, class: "field" %>
         </div>
         <%= f.submit "Smurf!", class: "btn btn-outline-dark" %>
         <% end %>

@@ -2,7 +2,6 @@
   <h4>Hello <%= current_user&.characteristic %> Smurf</h4>
 </div>
 
-
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.lelombard.com/uploads/actualite/3_GRANDIRAVECLESSCHTROUMPFS_02.jpg);">
     <h1>Juzcar</h1>
     <h1><span data-controller="typed-js"></span></h1>
@@ -17,9 +16,7 @@
           <%= link_to house_path(house.id) do %>
             <div class="card border border-dark border-1 shadow-lg" style="width: 18rem;">
               <div class="photo">
-                <% house.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:"card-img-top rounded-top"  %>
-                <% end %>
+                <%= cl_image_tag house.photo.key, height: 300, width: 300, crop: :fill, class:"card-img-top rounded-top" %>
               </div>
               <div class="card-body pt-2 pb-0 bg-light">
                 <h5><%= house.name %></h5>
