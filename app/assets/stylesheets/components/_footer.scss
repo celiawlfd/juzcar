@@ -41,3 +41,21 @@ footer > .smurf {
     color: white;
   }
 }
+
+.usefull-links{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin-top:30px;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  p{
+    padding:0px;
+    
+  }
+
+}
