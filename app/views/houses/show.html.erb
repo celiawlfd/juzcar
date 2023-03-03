@@ -37,26 +37,6 @@
                 </div>
                 <div class="col-12 d-flex justify-content-center">
                   <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Book now !</button>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h3 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h3>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <h5>Number for nights : <span id="number_nights"></span></h5>
-                          <p>Arrival date : <span id="arrival_date_value"></span></p>
-                          <p>Departure date : <span id="departure_date_value"></span></p>
-                          <h5>Total price : <span id="total_price"></span> €</h5>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
-                          <%= f.submit 'Confirm !', class: "btn btn-outline-dark", data: { turbo: false } %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               <% end %>
             </div>
@@ -70,10 +50,32 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
+<%# modal %>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Number for nights : <span id="number_nights"></span></h5>
+        <p>Arrival date : <span id="arrival_date_value"></span></p>
+        <p>Departure date : <span id="departure_date_value"></span></p>
+        <h5>Total price : <span id="total_price"></span> €</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" form="new_reservation" value="Submit" class= "btn btn-outline-dark" data-turbo="false">Confirm !</button>
+        <%# <%= f.submit 'Confirm !', class: "btn btn-outline-dark", data: { turbo: false } %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   const totalPriceSpan = document.getElementById("total_price");
