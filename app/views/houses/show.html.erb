@@ -16,19 +16,32 @@
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
         <div class="card p-3 my-3 border border-dark">
-          <p class="mb-1 fw-bold"><%= link_to "Add a review", new_house_review_path(@house)%></p>
-        </div>
-        <div class="card p-3 my-3 border border-dark">
-          <p><strong>Reviews</strong></p>
-          <ul class="list-group">
+          <div class="row">
+            <div class="col-9">
+              <p class= "btn border-0"><strong>Reviews</strong></p>
+            </div>
+            <div class="col-3 text-end">
+              <%= link_to "Add a review", new_house_review_path(@house), class: "btn btn-outline-dark" %>
+            </div>
+          </div>
+          <ul class="list-group border-top">
             <% @house.reviews.each do |review| %>
               <li class="list-group-item">
-                <%= review.content %>
-                <%= review.rating %>
-                <%= link_to "Delete",
-                  review_path(review),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
+                <div class="row">
+                  <div class="col-5">
+                    <%= review.content %>
+                  </div>
+                  <div class="col-2 text-center">
+                    <strong> <%= review.rating %> <i class="fa-regular fa-star"></i> </strong>
+                  </div>
+                  <div class="col-5 text-end">
+                    <%= link_to "Delete",
+                      review_path(review),
+                      class: "text-end",
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                    %>
+                  </div>
+                </div>
               </li>
             <% end %>
           </ul>
