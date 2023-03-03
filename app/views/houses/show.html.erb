@@ -12,78 +12,77 @@
           <h3>Description</h3>
           <p class="mb-0"><%= @house.description %></p>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
-          <h3>Details</h3>
-          <p class="fw-bold">Price : <%= @house.price_per_night %>€/night</p>
-          <p class="mb-1 fw-bold">People : <%= @house.number_of_people %></p>
-          <form class="card border-0">
-            <% unless current_user == @house.user %>
-              <div class="row">
-
-              </div>
-            <% end %>
-          </form>
+        <div style="width: 100%; height: 400px; border: 1px solid black;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
 
-      <div>
-       <% if current_user == @house.user %>
-          <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn-outline-dark " %>
-          <%= link_to "Delete", house_path(@house),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: "btn btn-outline-dark"%>
-       <% end %>
-       </div>
-    </div>
-  </div>
-
-
-        <%= simple_form_for [@house, @reservation] do |f| %>
-                  <div class="col-6">
-                    <%= f.input :arrival_date, as: :date, html5: true %>
-                  </div>
-                  <div class="col-6">
-                    <%= f.input :departure_date, as: :date, html5: true %>
-                  </div>
-                  <div class="col-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Book now !</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h5>Number for nights : <span id="number_nights"></span></h5>
-                            <p>Arrival date : <span id="arrival_date_value"></span></p>
-                            <p>Departure date : <span id="departure_date_value"></span></p>
-                            <h5>Total price : <span id="total_price"></span> </h5>
-                            <%# <p>Price for nights : <span id="total_price"></span></p> %>
-                            <%# <p>Juzcar fees (20%) :  <span id="juzcar_fees_price"></span></p> %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <%= f.submit 'Book now !', class: "btn btn-outline-dark"%>
-                          </div>
+      <div class="col-4">
+        <div class="col-sticky">
+          <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
+            <h3>Details</h3>
+            <p class="fw-bold">Price : <%= @house.price_per_night %>€/night</p>
+            <p class="mb-1 fw-bold">People : <%= @house.number_of_people %></p>
+          </div>
+          <% unless current_user == @house.user %>
+            <div class="card py-3 my-3 border border-dark font-weight-bold text-center">
+            <h3>Select dates</h3>
+              <%= simple_form_for [@house, @reservation] do |f| %>
+                <div class="px-3 fw-bold">
+                  <%= f.input :arrival_date, as: :date, html5: true %>
+                </div>
+                <div class="px-3 fw-bold">
+                  <%= f.input :departure_date, as: :date, html5: true %>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Book now !</button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <h5>Number for nights : <span id="number_nights"></span></h5>
+                          <p>Arrival date : <span id="arrival_date_value"></span></p>
+                          <p>Departure date : <span id="departure_date_value"></span></p>
+                          <h5>Total price : <span id="total_price"></span> </h5>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
+                          <%= f.submit 'Book now !', class: "btn btn-outline-dark", data: { turbo: false } %>
                         </div>
                       </div>
                     </div>
                   </div>
-                <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="d-flex justify-content-center">
+            <% if current_user == @house.user %>
+                <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn-outline-dark me-3" %>
+                <%= link_to "Delete", house_path(@house),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-delete"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
 <script>
-    // const totalPriceWithFeesSpan = document.getElementById("total_price_with_fees");
-    const totalPriceSpan = document.getElementById("total_price");
-    // const feesPriceSpan = document.getElementById("juzcar_fees_price");
-
+  const totalPriceSpan = document.getElementById("total_price");
   const numberOfNightsSpan = document.getElementById("number_nights");
-
 
   const arrivalDateId = document.getElementById("reservation_arrival_date");
   const valueArrival = document.getElementById("arrival_date_value");
+
   let arrivalDate = 0
   let departureDate = 0
   let numberNights = 0
@@ -124,12 +123,6 @@
 
       totalPrice = numberNights * <%= @house.price_per_night %>
       console.log(totalPriceSpan.textContent = totalPrice)
-
-      // juzcarFees = totalPrice * 0,2
-      // console.log(feesPriceSpan.textContent = juzcarFees)
-
-      // totalPriceWithFees = totalPrice + juzcarFees
-      // console.log(totalPriceWithFeesSpan.textContent = totalPriceWithFees)
     }
   }
 </script>

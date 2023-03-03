@@ -3,12 +3,24 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @houses = House.all
+    if params[:query].present?
+      @houses = House.search_by_name_description_and_address(params[:query])
+    else
+      @houses = House.all
+    end
   end
 
   def show
     @house = House.find(params[:id])
     @reservation = Reservation.new
+    @markers = House.near(@house.address, 10).map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { house: house }),
+        marker_html: render_to_string(partial: "marker")
+        }
+    end
   end
 
   def edit
