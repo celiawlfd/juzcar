@@ -15,7 +15,25 @@
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-      </div>
+        <div class="card p-3 my-3 border border-dark">
+          <p class="mb-1 fw-bold"><%= link_to "Add a review", new_house_review_path(@house)%></p>
+        </div>
+        <div class="card p-3 my-3 border border-dark">
+          <p><strong>Reviews</strong></p>
+          <ul class="list-group">
+            <% @house.reviews.each do |review| %>
+              <li class="list-group-item">
+                <%= review.content %>
+                <%= review.rating %>
+                <%= link_to "Delete",
+                  review_path(review),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
 
       <div class="col-4">
         <div class="col-sticky">
