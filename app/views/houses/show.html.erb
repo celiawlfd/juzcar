@@ -4,7 +4,8 @@
     <div class="row">
       <div class="col-8">
         <div class="card p-3 my-3 border border-dark">
-          <h1 class="mb-0"><%= @house.name %></h1>
+          <h1><%= @house.name %></h1>
+          <p class="mb-0"><%= @house.address %></p>
         </div>
         <div class="card p-3 my-3 border border-dark">
           <h3>Description</h3>
@@ -15,7 +16,25 @@
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-      </div>
+        <div class="card p-3 my-3 border border-dark">
+          <p class="mb-1 fw-bold"><%= link_to "Add a review", new_house_review_path(@house)%></p>
+        </div>
+        <div class="card p-3 my-3 border border-dark">
+          <p><strong>Reviews</strong></p>
+          <ul class="list-group">
+            <% @house.reviews.each do |review| %>
+              <li class="list-group-item">
+                <%= review.content %>
+                <%= review.rating %>
+                <%= link_to "Delete",
+                  review_path(review),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
 
       <div class="col-4">
         <div class="col-sticky">
@@ -47,7 +66,7 @@
                           <h5>Number for nights : <span id="number_nights"></span></h5>
                           <p>Arrival date : <span id="arrival_date_value"></span></p>
                           <p>Departure date : <span id="departure_date_value"></span></p>
-                          <h5>Total price : <span id="total_price"></span> </h5>
+                          <h5>Total price : <span id="total_price"></span> €</h5>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
