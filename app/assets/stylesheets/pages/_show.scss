@@ -6,3 +6,10 @@
   position: sticky !important;
   top: 84px
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  padding-left: 145px;
+  padding-right: 50px;
+  background-color: white;
+  opacity: 0.8;
+}
