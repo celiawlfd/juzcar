@@ -1,25 +1,31 @@
-<div class="main_container">
-  <div class="component">
+<div class="main_container d-flex justify-content-center">
+  <div class="component form border border-dark p-4 m-4">
     <h2>Log in</h2>
+    <hr>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
       <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <div class="d-flex">
+            <div class="p-2">
+              <%= f.input :email,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" } %>
+            </div>
+            <div class="p-2">
+              <%= f.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+            </div>
+          </div>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+      <div class="form-actions mb-4">
+        <%= f.button :submit, "Log in", class:"btn btn-outline-dark" %>
       </div>
     <% end %>
+  <%= render "devise/shared/links" %>
+  <%= image_tag "/Users/seyonnet/code/celiawlfd/juzcar/app/assets/images/bricoleur.png", class:"bricoleur" %>
   </div>
-  <%# <div class="img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://4.bp.blogspot.com/-4N0fBfq64Nc/T6h83Ic0IEI/AAAAAAAAGaA/sEH9H2SSAdk/s320/smurfs_image-02.jpg);">
-  </div> %>
 </div>
-
-<%= render "devise/shared/links" %>

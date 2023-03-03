@@ -1,6 +1,4 @@
-
-
-  <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
+ <div class="banner" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/001/678/075/large/root-pid-smurf-02.jpg?1450698589);">
   </div>
   <div class="container px-5 p-10 top-margin-neg">
     <div class="row">
@@ -42,7 +40,7 @@
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h1>
+                          <h3 class="modal-title fs-5" id="exampleModalLabel">Reservation recap' for <%= @house.name %></h3>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -53,7 +51,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-contrary" data-bs-dismiss="modal">Cancel</button>
-                          <%= f.submit 'Book now !', class: "btn btn-outline-dark", data: { turbo: false } %>
+                          <%= f.submit 'Confirm !', class: "btn btn-outline-dark", data: { turbo: false } %>
                         </div>
                       </div>
                     </div>
